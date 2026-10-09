@@ -8,7 +8,11 @@
  $('todayDate').textContent=new Date().toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'});
  $('logoutBtn').addEventListener('click',async()=>{if(client) await client.auth.signOut();location.href='index.html';});
  const themeBtn=$('themeBtn'); if(themeBtn) themeBtn.addEventListener('click',()=>document.body.classList.toggle('light-mode'));
- $('menuBtn').addEventListener('click',()=> $('sidebar').classList.toggle('open'));
+ const menuBtn=$('menuBtn'), sidebar=$('sidebar'), sidebarOverlay=$('sidebarOverlay');
+ function setSidebarOpen(open){sidebar.classList.toggle('open',open);document.body.classList.toggle('sidebar-open',open);menuBtn.textContent=open?'×':'☰';menuBtn.setAttribute('aria-label',open?'Close menu':'Open menu');menuBtn.setAttribute('aria-expanded',String(open));}
+ menuBtn.addEventListener('click',()=>setSidebarOpen(!sidebar.classList.contains('open')));
+ if(sidebarOverlay) sidebarOverlay.addEventListener('click',()=>setSidebarOpen(false));
+ document.addEventListener('keydown',e=>{if(e.key==='Escape')setSidebarOpen(false);});
  $('searchBtn').addEventListener('click',()=>{ $('serviceSearch').focus(); $('serviceSearch').scrollIntoView({behavior:'smooth',block:'center'});});
  const official={
   sevasindhu:'https://sevasindhu.karnataka.gov.in/',
@@ -43,5 +47,5 @@
  let count=0;
  document.querySelectorAll('.service-card').forEach(card=>card.addEventListener('click',()=>{count++;$('requestCount').textContent=count;openMenu(card.dataset.service);}));
  $('serviceSearch').addEventListener('input',e=>{const q=e.target.value.toLowerCase();document.querySelectorAll('.service-card').forEach(card=>card.hidden=!card.textContent.toLowerCase().includes(q));});
- document.querySelectorAll('.nav-item').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();document.querySelectorAll('.nav-item').forEach(x=>x.classList.remove('active'));a.classList.add('active');const section=a.dataset.section;if(section==='dashboard'){window.scrollTo({top:0,behavior:'smooth'});return;}if(section==='profile'){toast('Your account details are shown in the top bar.');return;}const names={government:'Government Services',printing:'Print Services',digital:'Ration Card Services',tools:'Certificates'};const target=names[section];if(target){openMenu(target);}else{const messages={wallet:'Wallet features are not connected yet.',transactions:'Transaction history requires payment integration.',history:'Service history will be available after requests are stored.'};toast(messages[section]||'This section is ready for future integration.');}}));
+ document.querySelectorAll('.nav-item').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();document.querySelectorAll('.nav-item').forEach(x=>x.classList.remove('active'));a.classList.add('active');if(window.matchMedia('(max-width: 760px)').matches)setSidebarOpen(false);const section=a.dataset.section;if(section==='dashboard'){window.scrollTo({top:0,behavior:'smooth'});return;}if(section==='profile'){toast('Your account details are shown in the top bar.');return;}const names={government:'Government Services',printing:'Print Services',digital:'Ration Card Services',tools:'Certificates'};const target=names[section];if(target){openMenu(target);}else{const messages={wallet:'Wallet features are not connected yet.',transactions:'Transaction history requires payment integration.',history:'Service history will be available after requests are stored.'};toast(messages[section]||'This section is ready for future integration.');}}));
 })();
