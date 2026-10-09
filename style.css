@@ -16,13 +16,12 @@
 .stat-card,.service-card,.contact-panel{background:#fffdf8;border-color:#e8dfcd;box-shadow:0 8px 20px #34270b08}.section-heading h2{color:#302718}.service-card:hover{border-color:#d8b56d;box-shadow:0 12px 28px #7b5b1a16}.service-card strong{color:#302a20}.service-icon.gold{background:#b68b3e}.contact-kicker{color:#a47a2c}.contact-btn{background:#f5edda;color:#75551d}.contact-btn.whatsapp{background:#e9f7ee;color:#168451}
 @media(max-width:760px){.sidebar{background:linear-gradient(180deg,#11110f 0%,#201d17 100%)}.topbar-title{color:#211d16}}
 
-
-/* Kannada greeting banner: luxury black-and-gold */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada:wght@500;600;700;800&display=swap');
-.eeranna-banner{position:relative;overflow:hidden;margin:22px 0 26px;padding:28px 24px 26px;text-align:center;border:1px solid #b9974e;border-radius:20px;background:radial-gradient(ellipse at top,#3a3020 0%,#171613 58%,#10100f 100%);box-shadow:0 12px 32px #6e51171a}
-.eeranna-banner:before,.eeranna-banner:after{content:"✦";position:absolute;top:50%;transform:translateY(-50%);font-size:clamp(22px,3vw,34px);color:#d8b56d;opacity:.85}
-.eeranna-banner:before{left:clamp(14px,4vw,48px)}.eeranna-banner:after{right:clamp(14px,4vw,48px)}
-.eeranna-banner-kicker{display:block;color:#d8b56d;font:700 11px 'Noto Sans Kannada',sans-serif;letter-spacing:2px;margin-bottom:12px}
-.eeranna-banner h2{margin:0 auto;color:#f5d78e;font-family:'Noto Sans Kannada','Nirmala UI',sans-serif;font-weight:800;font-size:clamp(25px,4vw,48px);line-height:1.5;text-wrap:balance;text-shadow:0 2px 18px #d8b56d35}
-.eeranna-banner-line{display:block;width:min(190px,45%);height:2px;margin:16px auto 0;background:linear-gradient(90deg,transparent,#d8b56d,transparent)}
-@media(max-width:760px){.eeranna-banner{padding:24px 22px;margin:15px 0 20px}.eeranna-banner h2{font-size:clamp(22px,6vw,32px)}.eeranna-banner:before,.eeranna-banner:after{font-size:17px}}
+/* Service integration menu */
+.card-action{display:inline-block;margin-top:14px;color:#9a762e;font-size:11px;font-weight:800;letter-spacing:.2px}
+.service-modal{display:none;position:fixed;inset:0;z-index:100;align-items:center;justify-content:center;padding:20px}
+.service-modal.open{display:flex}.modal-backdrop{position:absolute;inset:0;background:rgba(12,12,10,.72);backdrop-filter:blur(5px)}
+.modal-card{position:relative;z-index:1;width:min(760px,100%);max-height:88vh;overflow:auto;background:#fffdf8;border:1px solid #d8b56d;border-radius:22px;padding:24px;box-shadow:0 25px 80px #0005}
+.modal-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;border-bottom:1px solid #e8dfcd;padding-bottom:17px;margin-bottom:17px}
+.modal-kicker{font-size:10px;font-weight:800;letter-spacing:1.7px;color:#a47a2c}.modal-head h2{margin:6px 0;font-size:25px;color:#2b2418}.modal-head p{margin:0;color:#8b8477;font-size:13px}.modal-close{border:1px solid #e8dfcd;background:#f5edda;color:#4b3b1d;border-radius:12px;width:40px;height:40px;font-size:27px;line-height:1;cursor:pointer}
+.modal-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.modal-option{border:1px solid #e8dfcd;border-radius:15px;padding:16px;background:#fff;display:flex;flex-direction:column;gap:9px}.modal-option h3{font-size:14px;margin:0;color:#2f281d}.modal-option p{font-size:12px;line-height:1.55;color:#81796b;margin:0;flex:1}.modal-option-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}.option-btn{display:inline-flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;padding:10px 12px;border-radius:9px;font-size:11px;font-weight:800}.option-primary{background:#211d16;color:#e5c77f;border:1px solid #5d4824}.option-secondary{background:#f5edda;color:#76571e;border:1px solid #e5d3a8}.modal-note{font-size:11px;line-height:1.5;color:#8b8477;margin:16px 0 0}.modal-open{overflow:hidden}
+@media(max-width:600px){.service-modal{padding:10px}.modal-card{padding:17px;border-radius:17px;max-height:92vh}.modal-options{grid-template-columns:1fr}.modal-head h2{font-size:21px}.option-btn{flex:1}}

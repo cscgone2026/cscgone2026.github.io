@@ -33,11 +33,6 @@
     </header>
     <div class="content" id="dashboard">
       <section class="hero-banner"><div><div class="hero-tag">✦ CSC GONE SERVICE CENTRE</div><h1>Good service starts here.</h1><p>Choose a category below to explore available digital services.</p></div><div class="hero-orb">CSC<br><small>GONE</small></div></section>
-      <section class="eeranna-banner" aria-label="Special greeting">
-        <span class="eeranna-banner-kicker">✦ ಗೌರವದ ನುಡಿ ✦</span>
-        <h2 lang="kn">ಆಸಿಫ್ ಅಣ್ಣ ಅವರಿಗೆ ಹುಟ್ಟು ಹಬ್ಬದ ಶುಭಾಶಯಗಳು </h2>
-        <span class="eeranna-banner-line" aria-hidden="true"></span>
-      </section>
       <section class="stats-grid">
         <article class="stat-card"><div class="stat-icon green">▣</div><p>Account</p><h2>Active</h2><small>Your login is ready</small></article>
         <article class="stat-card"><div class="stat-icon blue">⇄</div><p>Service requests</p><h2 id="requestCount">0</h2><small>Requests from this session</small></article>
@@ -45,20 +40,25 @@
       </section>
       <section class="section-heading"><div><h2>▦ All Services</h2><p>Choose a service category to view options.</p></div><div class="search-wrap"><input id="serviceSearch" placeholder="Search services..." aria-label="Search services"></div></section>
       <section class="service-grid" id="serviceGrid">
-        <button class="service-card" data-service="Government Services"><span class="service-icon orange">▤</span><strong>Government Services</strong><small>Applications & public services</small></button>
-        <button class="service-card" data-service="Print Services"><span class="service-icon blue">▣</span><strong>Print Services</strong><small>Print, scan & document help</small></button>
-        <button class="service-card" data-service="Ration Card"><span class="service-icon red">▣</span><strong>Ration Card</strong><small>Information & application help</small></button>
-        <button class="service-card" data-service="Voter Services"><span class="service-icon purple">✓</span><strong>Voter Services</strong><small>Voter-related assistance</small></button>
-        <button class="service-card" data-service="Aadhaar Services"><span class="service-icon teal">◎</span><strong>Aadhaar Services</strong><small>Guidance for Aadhaar services</small></button>
-        <button class="service-card" data-service="Digital Services"><span class="service-icon green">▣</span><strong>Digital Services</strong><small>Online form & digital support</small></button>
-        <button class="service-card" data-service="Vehicle Services"><span class="service-icon indigo">▰</span><strong>Vehicle Services</strong><small>Transport-related assistance</small></button>
-        <button class="service-card" data-service="Certificates"><span class="service-icon gold">✧</span><strong>Certificates</strong><small>Certificate application guidance</small></button>
-        <button class="service-card" data-service="Free Tools"><span class="service-icon slate">✦</span><strong>Free Tools</strong><small>Useful everyday tools</small></button>
+        <button class="service-card" data-service="Government Services"><span class="service-icon orange">▤</span><strong>Government Services</strong><small>Gruha Lakshmi and Yuva Nidhi scheme assistance.</small><span class="card-action">View 2 services →</span></button>
+        <button class="service-card" data-service="Print Services"><span class="service-icon blue">▣</span><strong>Print Services</strong><small>Request document print and certificate services.</small><span class="card-action">View 4 services →</span></button>
+        <button class="service-card" data-service="Ration Card Services"><span class="service-icon red">▤</span><strong>Ration Card Services</strong><small>Status, new applications, corrections and details.</small><span class="card-action">View 4 services →</span></button>
+        <button class="service-card" data-service="Voter Services"><span class="service-icon purple">✓</span><strong>Voter Services</strong><small>Official voter service portal and print assistance.</small><span class="card-action">Explore →</span></button>
+        <button class="service-card" data-service="Aadhaar Services"><span class="service-icon teal">◎</span><strong>Aadhaar Services</strong><small>Official Aadhaar portal and print assistance.</small><span class="card-action">Explore →</span></button>
+        <button class="service-card" data-service="Certificates"><span class="service-icon gold">✧</span><strong>Caste & Income Certificate</strong><small>Certificate service assistance and official portal.</small><span class="card-action">Explore →</span></button>
       </section>
       <section class="contact-panel"><div><span class="contact-kicker">NEED HELP?</span><h2>We're here to help.</h2><p>GRAMA ONE AND CSC CENTRE · Near Gram Panchayat, Palbhavi, Karnataka – 591235</p></div><div class="contact-actions"><a class="contact-btn" href="tel:+917338236209">☎ Call CSC GONE</a><a class="contact-btn whatsapp" href="https://wa.me/917338236209" target="_blank" rel="noopener">WhatsApp us ↗</a></div></section>
       <footer class="dashboard-footer">© 2026 CSC GONE. All rights reserved.</footer>
     </div>
   </main>
+</div>
+<div class="service-modal" id="serviceModal" aria-hidden="true">
+  <div class="modal-backdrop" data-close-modal="true"></div>
+  <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-head"><div><span class="modal-kicker">CSC GONE SERVICE MENU</span><h2 id="modalTitle">Choose a service</h2><p id="modalDescription">Select an option below.</p></div><button class="modal-close" id="closeServiceModal" aria-label="Close">×</button></div>
+    <div class="modal-options" id="modalOptions"></div>
+    <p class="modal-note">Official applications and eligibility decisions are handled by the relevant government portal. CSC GONE can assist with access, forms and printing.</p>
+  </section>
 </div>
 <div class="toast" id="toast" role="status"></div>
 </body></html>
