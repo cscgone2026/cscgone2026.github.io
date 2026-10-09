@@ -15,3 +15,14 @@
 .hero-banner{background:linear-gradient(110deg,#14130f 0%,#292216 55%,#6d5122 100%);box-shadow:0 14px 35px #1c170d1c}.hero-tag{color:#e6c77f;border-color:#d8b56d66;background:#d8b56d12}.hero-banner p{color:#e5dac0}.hero-orb{border-color:#d8b56d66;color:#e7ca83;background:#d8b56d12}
 .stat-card,.service-card,.contact-panel{background:#fffdf8;border-color:#e8dfcd;box-shadow:0 8px 20px #34270b08}.section-heading h2{color:#302718}.service-card:hover{border-color:#d8b56d;box-shadow:0 12px 28px #7b5b1a16}.service-card strong{color:#302a20}.service-icon.gold{background:#b68b3e}.contact-kicker{color:#a47a2c}.contact-btn{background:#f5edda;color:#75551d}.contact-btn.whatsapp{background:#e9f7ee;color:#168451}
 @media(max-width:760px){.sidebar{background:linear-gradient(180deg,#11110f 0%,#201d17 100%)}.topbar-title{color:#211d16}}
+
+
+/* Kannada greeting banner: luxury black-and-gold */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada:wght@500;600;700;800&display=swap');
+.eeranna-banner{position:relative;overflow:hidden;margin:22px 0 26px;padding:28px 24px 26px;text-align:center;border:1px solid #b9974e;border-radius:20px;background:radial-gradient(ellipse at top,#3a3020 0%,#171613 58%,#10100f 100%);box-shadow:0 12px 32px #6e51171a}
+.eeranna-banner:before,.eeranna-banner:after{content:"✦";position:absolute;top:50%;transform:translateY(-50%);font-size:clamp(22px,3vw,34px);color:#d8b56d;opacity:.85}
+.eeranna-banner:before{left:clamp(14px,4vw,48px)}.eeranna-banner:after{right:clamp(14px,4vw,48px)}
+.eeranna-banner-kicker{display:block;color:#d8b56d;font:700 11px 'Noto Sans Kannada',sans-serif;letter-spacing:2px;margin-bottom:12px}
+.eeranna-banner h2{margin:0 auto;color:#f5d78e;font-family:'Noto Sans Kannada','Nirmala UI',sans-serif;font-weight:800;font-size:clamp(25px,4vw,48px);line-height:1.5;text-wrap:balance;text-shadow:0 2px 18px #d8b56d35}
+.eeranna-banner-line{display:block;width:min(190px,45%);height:2px;margin:16px auto 0;background:linear-gradient(90deg,transparent,#d8b56d,transparent)}
+@media(max-width:760px){.eeranna-banner{padding:24px 22px;margin:15px 0 20px}.eeranna-banner h2{font-size:clamp(22px,6vw,32px)}.eeranna-banner:before,.eeranna-banner:after{font-size:17px}}
