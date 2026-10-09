@@ -12,7 +12,7 @@
     <div class="side-caption">DIGITAL SERVICE PORTAL</div>
     <nav>
       <a class="nav-item active" href="#dashboard" data-section="dashboard"><span>▦</span> Dashboard</a>
-      <a class="nav-item" href="#wallet" data-section="wallet"><span>▣</span> Wallet <b class="mini-badge">Soon</b></a>
+      <a class="nav-item" href="#wallet" data-section="wallet"><span>▣</span> Wallet</a>
       <div class="nav-label">STATEMENT</div>
       <a class="nav-item" href="#transactions" data-section="transactions"><span>⇄</span> Transactions</a>
       <a class="nav-item" href="#history" data-section="history"><span>☷</span> Service History</a>
@@ -59,6 +59,14 @@
     <div class="modal-head"><div><span class="modal-kicker">CSC GONE SERVICE MENU</span><h2 id="modalTitle">Choose a service</h2><p id="modalDescription">Select an option below.</p></div><button class="modal-close" id="closeServiceModal" aria-label="Close">×</button></div>
     <div class="modal-options" id="modalOptions"></div>
     <p class="modal-note">Official applications and eligibility decisions are handled by the relevant government portal. CSC GONE can assist with access, forms and printing.</p>
+  </section>
+</div>
+<div class="service-modal" id="walletModal" aria-hidden="true">
+  <div class="modal-backdrop" data-close-wallet="true"></div>
+  <section class="modal-card wallet-modal-card" role="dialog" aria-modal="true" aria-labelledby="walletTitle">
+    <div class="modal-head"><div><span class="modal-kicker">CSC GONE WALLET</span><h2 id="walletTitle">Add Money</h2><p>Scan this Google Pay QR code using any UPI app.</p></div><button class="modal-close" id="closeWalletModal" aria-label="Close">×</button></div>
+    <div class="wallet-qr-wrap"><img src="assets/google-pay-qr.jpeg" alt="Raju Kagawad Google Pay receive-money QR code" class="wallet-qr"><h3>Raju Kagawad</h3><p class="wallet-upi">UPI ID: rajukgwd-1@okaxis</p><p class="wallet-instruction">Open Google Pay, PhonePe, Paytm or your bank UPI app and scan to pay.</p><a class="option-btn option-primary" href="upi://pay?pa=rajukgwd-1@okaxis&pn=Raju%20Kagawad" id="payUpiLink">Open UPI App</a></div>
+    <div class="wallet-warning"><strong>Important:</strong> After paying, save your UPI transaction ID and contact CSC GONE for balance confirmation. This QR display does not automatically verify payment or update wallet balance.</div>
   </section>
 </div>
 <div class="toast" id="toast" role="status"></div>
