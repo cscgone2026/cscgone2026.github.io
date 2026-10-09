@@ -1,1 +1,59 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CSC GONE | Dashboard</title><link rel="stylesheet" href="auth.css"><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="config.js"></script></head><body><main class="shell" style="min-height:420px;max-width:720px;grid-template-columns:1fr"><section class="form-panel" style="padding:36px"><div class="brand" style="color:#111"><span style="color:#b18b45">CSC</span> GONE</div><p class="eyebrow">ACCOUNT DASHBOARD</p><h2 id="welcome">Welcome</h2><p class="sub">You are logged in to CSC GONE.</p><div class="office" style="border-top:1px solid #eee;padding:20px 0;color:#222"><div><b>GRAMA ONE AND CSC CENTRE</b><small style="color:#666">Near Gram Panchayat, Palbhavi<br>Karnataka – 591235</small></div></div><a class="primary" style="display:block;text-align:center;text-decoration:none" href="home.html">Visit CSC GONE Website</a><button id="logout" class="primary" style="background:#8a682d">Logout</button><div id="status" class="notice" hidden></div></section></main><script>(async()=>{const status=document.getElementById('status');function fail(m){status.textContent=m;status.hidden=false;status.className='notice error'}const u=window.CSC_GONE_SUPABASE_URL,k=window.CSC_GONE_SUPABASE_ANON_KEY;if(!window.supabase||!u||!k||u.includes('PASTE_')||k.includes('PASTE_')){fail('Finish Supabase setup in config.js first.');return}const sb=window.supabase.createClient(u,k),{data,error}=await sb.auth.getUser();if(error||!data.user){location.replace('index.html');return}document.getElementById('welcome').textContent='Welcome, '+(data.user.user_metadata?.full_name||'CSC GONE User');document.getElementById('logout').onclick=async()=>{await sb.auth.signOut();location.replace('index.html')}})();</script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CSC GONE | Dashboard</title><link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="config.js"></script><script defer src="dashboard.js"></script>
+</head>
+<body class="dashboard-page">
+<div class="app-layout">
+  <aside class="sidebar" id="sidebar">
+    <a class="brand-mark side-brand" href="dashboard.html">CSC <span>GONE</span></a>
+    <div class="side-caption">DIGITAL SERVICE PORTAL</div>
+    <nav>
+      <a class="nav-item active" href="#dashboard" data-section="dashboard"><span>▦</span> Dashboard</a>
+      <a class="nav-item" href="#wallet" data-section="wallet"><span>▣</span> Wallet <b class="mini-badge">Soon</b></a>
+      <div class="nav-label">STATEMENT</div>
+      <a class="nav-item" href="#transactions" data-section="transactions"><span>⇄</span> Transactions</a>
+      <a class="nav-item" href="#history" data-section="history"><span>☷</span> Service History</a>
+      <div class="nav-label">SERVICES</div>
+      <a class="nav-item" href="#government" data-section="government"><span>▤</span> Govt. Services</a>
+      <a class="nav-item" href="#printing" data-section="printing"><span>▣</span> Print Services</a>
+      <a class="nav-item" href="#digital" data-section="digital"><span>▧</span> Digital Services</a>
+      <a class="nav-item" href="#tools" data-section="tools"><span>✦</span> Free Tools</a>
+      <a class="nav-item" href="#profile" data-section="profile"><span>◉</span> My Profile</a>
+    </nav>
+    <div class="sidebar-bottom"><span class="online-dot"></span> Portal status: Online</div>
+  </aside>
+  <main class="main-area">
+    <header class="topbar">
+      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
+      <div class="topbar-title">CSC GONE <span>/ Digital Services</span></div>
+      <div class="top-actions"><button class="icon-btn" id="searchBtn" title="Search services">⌕</button><button class="icon-btn" id="themeBtn" title="Toggle theme">◐</button><div class="user-chip"><div class="avatar">C</div><div><strong id="userName">CSC GONE User</strong><small id="userEmail">Signed in</small></div></div><button class="logout-btn" id="logoutBtn">Logout</button></div>
+    </header>
+    <div class="content" id="dashboard">
+      <section class="hero-banner"><div><div class="hero-tag">✦ CSC GONE SERVICE CENTRE</div><h1>Good service starts here.</h1><p>Choose a category below to explore available digital services.</p></div><div class="hero-orb">CSC<br><small>GONE</small></div></section>
+      <section class="stats-grid">
+        <article class="stat-card"><div class="stat-icon green">▣</div><p>Account</p><h2>Active</h2><small>Your login is ready</small></article>
+        <article class="stat-card"><div class="stat-icon blue">⇄</div><p>Service requests</p><h2 id="requestCount">0</h2><small>Requests from this session</small></article>
+        <article class="stat-card"><div class="stat-icon gold">▦</div><p>Today's activity</p><h2 id="todayDate">—</h2><small>Welcome to CSC GONE</small></article>
+      </section>
+      <section class="section-heading"><div><h2>▦ All Services</h2><p>Choose a service category to view options.</p></div><div class="search-wrap"><input id="serviceSearch" placeholder="Search services..." aria-label="Search services"></div></section>
+      <section class="service-grid" id="serviceGrid">
+        <button class="service-card" data-service="Government Services"><span class="service-icon orange">▤</span><strong>Government Services</strong><small>Applications & public services</small></button>
+        <button class="service-card" data-service="Print Services"><span class="service-icon blue">▣</span><strong>Print Services</strong><small>Print, scan & document help</small></button>
+        <button class="service-card" data-service="Ration Card"><span class="service-icon red">▣</span><strong>Ration Card</strong><small>Information & application help</small></button>
+        <button class="service-card" data-service="Voter Services"><span class="service-icon purple">✓</span><strong>Voter Services</strong><small>Voter-related assistance</small></button>
+        <button class="service-card" data-service="Aadhaar Services"><span class="service-icon teal">◎</span><strong>Aadhaar Services</strong><small>Guidance for Aadhaar services</small></button>
+        <button class="service-card" data-service="Digital Services"><span class="service-icon green">▣</span><strong>Digital Services</strong><small>Online form & digital support</small></button>
+        <button class="service-card" data-service="Vehicle Services"><span class="service-icon indigo">▰</span><strong>Vehicle Services</strong><small>Transport-related assistance</small></button>
+        <button class="service-card" data-service="Certificates"><span class="service-icon gold">✧</span><strong>Certificates</strong><small>Certificate application guidance</small></button>
+        <button class="service-card" data-service="Free Tools"><span class="service-icon slate">✦</span><strong>Free Tools</strong><small>Useful everyday tools</small></button>
+      </section>
+      <section class="contact-panel"><div><span class="contact-kicker">NEED HELP?</span><h2>We're here to help.</h2><p>GRAMA ONE AND CSC CENTRE · Near Gram Panchayat, Palbhavi, Karnataka – 591235</p></div><div class="contact-actions"><a class="contact-btn" href="tel:+917338236209">☎ Call CSC GONE</a><a class="contact-btn whatsapp" href="https://wa.me/917338236209" target="_blank" rel="noopener">WhatsApp us ↗</a></div></section>
+      <footer class="dashboard-footer">© 2026 CSC GONE. All rights reserved.</footer>
+    </div>
+  </main>
+</div>
+<div class="toast" id="toast" role="status"></div>
+</body></html>
