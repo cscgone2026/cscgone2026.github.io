@@ -1,10 +1,59 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CSC GONE | Digital Services</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head><body>
-<header><a class="logo" href="#home"><b>CSC</b> GONE</a><nav id="nav"><a href="#home">Home</a><a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#about">About</a><a href="#contact">Contact</a></nav><button onclick="document.querySelector('nav').classList.toggle('open')">☰</button></header>
-<section class="hero" id="home"><div><small>✦ DIGITAL • TRUST • SERVICE</small><h1>Your Trusted <em>Digital</em><br>Service Partner.</h1><p>Professional digital and citizen services with a simple, convenient and customer-focused experience.</p><a class="btn" href="#services">Explore Services</a> <a class="btn ghost" href="#contact">Contact Us</a><div class="points">✓ Professional &nbsp; ✓ Convenient &nbsp; ✓ Customer Focused</div></div><div class="visual"><img src="images/hero.svg" alt="CSC GONE digital services"></div></section>
-<section class="stats"><div><b>01</b>Professional Service</div><div><b>02</b>Easy Process</div><div><b>03</b>Customer Focused</div><div><b>04</b>Digital First</div></section>
-<section class="section" id="services"><div class="head"><small>WHAT WE DO</small><h2>Our <em>Services</em></h2><p>Useful digital and citizen-focused services in one place.</p></div><div class="grid">
-<article><i>🪪</i><h3>Aadhaar Services</h3><p>Assistance with eligible Aadhaar-related digital services.</p></article><article><i>💳</i><h3>PAN Card Services</h3><p>Support with PAN applications, corrections and processes.</p></article><article><i>🏦</i><h3>Banking Services</h3><p>Convenient assistance for available digital banking services.</p></article><article><i>📄</i><h3>Online Applications</h3><p>Help with forms, registrations, applications and submissions.</p></article><article><i>🖨️</i><h3>Printing & Scanning</h3><p>Printing, scanning, Xerox and document support.</p></article><article><i>✈️</i><h3>Booking Services</h3><p>Assistance with eligible online booking processes.</p></article><article><i>🧾</i><h3>Government Services</h3><p>Guidance for selected government digital services.</p></article><article><i>💻</i><h3>Digital Services</h3><p>Everyday computer and online support.</p></article><article><i>🤝</i><h3>Customer Support</h3><p>Friendly assistance from start to finish.</p></article></div></section>
-<section class="dark section" id="gallery"><div class="head"><small>OUR WORKSPACE</small><h2>Service <em>Gallery</em></h2><p>These are sample visuals. Replace them with your own photos anytime.</p></div><div class="gallery"><img src="images/office.svg" alt="Office"><img src="images/digital.svg" alt="Digital services"><img src="images/documents.svg" alt="Documents"></div></section>
-<section class="section about" id="about"><div class="box"><small>ABOUT CSC GONE</small><h2>Simple service.<br><em>Better experience.</em></h2><p>CSC GONE is built to make digital and citizen services easier to access, with clarity, convenience and professional customer support.</p><div class="checks">✓ Easy to understand &nbsp; ✓ Professional approach &nbsp; ✓ Customer focused &nbsp; ✓ Digital convenience</div></div></section>
-<section class="cta" id="contact"><small>NEED ASSISTANCE?</small><h2>Let's make your digital work easier.</h2><p>Visit our office or contact us for digital and citizen services.</p><div class="contact"><div>📞 <b>Phone</b><span>7338236209</span></div><div>💬 <b>WhatsApp</b><span>7338236209</span></div><div>✉ <b>Email</b><span>YOUR EMAIL ADDRESS</span></div><div>📍 <b>Location</b><span>GRAMA ONE AND CSC CENTRE<br>NEAR GRAM PANCHAYAT PALBHAVI<br>Karnataka – 591235</span></div></div><a class="btn" href="tel:+917338236209">Call Now</a> <a class="btn wa" href="https://wa.me/917338236209">WhatsApp</a> <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Grama+One+and+CSC+Centre+near+Gram+Panchayat+Palbhavi+Karnataka+591235" target="_blank" rel="noopener">Get Directions</a></section>
-<footer><div class="logo"><b>CSC</b> GONE</div><span>© 2026 CSC GONE. All rights reserved.</span></footer><script>document.querySelectorAll('nav a').forEach(a=>a.onclick=()=>document.querySelector('nav').classList.remove('open'))</script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CSC GONE | Digital Services Dashboard</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script><script defer src="dashboard.js"></script>
+</head>
+<body class="dashboard-page">
+<div class="app-layout">
+  <aside class="sidebar" id="sidebar">
+    <a class="brand-mark side-brand" href="home.html">CSC <span>GONE</span></a>
+    <div class="side-caption">DIGITAL SERVICE PORTAL</div>
+    <nav>
+      <a class="nav-item active" href="#dashboard" data-section="dashboard"><span>▦</span> Dashboard</a>
+      <a class="nav-item" href="#wallet" data-section="wallet"><span>▣</span> Wallet <b class="mini-badge">Soon</b></a>
+      <div class="nav-label">MY ACTIVITY</div>
+      <a class="nav-item" href="#transactions" data-section="transactions"><span>⇄</span> Transactions</a>
+      <a class="nav-item" href="#history" data-section="history"><span>☷</span> Service History</a>
+      <div class="nav-label">SERVICES</div>
+      <a class="nav-item" href="#government" data-section="government"><span>▤</span> Govt. Services</a>
+      <a class="nav-item" href="#printing" data-section="printing"><span>▣</span> Print Services</a>
+      <a class="nav-item" href="#digital" data-section="digital"><span>▧</span> Digital Services</a>
+      <a class="nav-item" href="#tools" data-section="tools"><span>✦</span> Free Tools</a>
+      <a class="nav-item" href="#profile" data-section="profile"><span>◉</span> My Profile</a>
+    </nav>
+    <div class="sidebar-bottom"><span class="online-dot"></span> Portal status: Online</div>
+  </aside>
+  <main class="main-area">
+    <header class="topbar">
+      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
+      <div class="topbar-title">CSC GONE <span>/ Digital Services</span></div>
+      <div class="top-actions"><button class="icon-btn" id="searchBtn" title="Search services">⌕</button><div class="user-chip"><div class="avatar">C</div><div><strong id="userName">CSC GONE User</strong><small id="userEmail">Signed in</small></div></div><button class="logout-btn" id="logoutBtn">Logout</button></div>
+    </header>
+    <div class="content" id="dashboard">
+      <section class="hero-banner"><div><div class="hero-tag">✦ CSC GONE SERVICE CENTRE</div><h1>Your Digital Service Hub.</h1><p>Useful digital and citizen-focused services in one place.</p></div><div class="hero-orb">CSC<br><small>GONE</small></div></section>
+      <section class="stats-grid">
+        <article class="stat-card"><div class="stat-icon green">✓</div><p>Account Status</p><h2>Active</h2><small>Your login is ready</small></article>
+        <article class="stat-card"><div class="stat-icon blue">⇄</div><p>Services Selected</p><h2 id="requestCount">0</h2><small>Selections this session</small></article>
+        <article class="stat-card"><div class="stat-icon gold">▦</div><p>Today's Date</p><h2 id="todayDate">—</h2><small>Welcome to CSC GONE</small></article>
+      </section>
+      <section class="section-heading"><div><h2>All Services</h2><p>Select a category to get started.</p></div><div class="search-wrap"><input id="serviceSearch" placeholder="Search services..." aria-label="Search services"></div></section>
+      <section class="service-grid" id="serviceGrid">
+        <button class="service-card" data-service="Aadhaar Services"><span class="service-icon orange">◎</span><strong>Aadhaar Services</strong><small>Assistance with eligible Aadhaar-related digital services.</small></button>
+        <button class="service-card" data-service="PAN Card Services"><span class="service-icon blue">▤</span><strong>PAN Card Services</strong><small>Support with PAN applications, corrections and processes.</small></button>
+        <button class="service-card" data-service="Banking Services"><span class="service-icon gold">▣</span><strong>Banking Services</strong><small>Convenient assistance for available digital banking services.</small></button>
+        <button class="service-card" data-service="Online Applications"><span class="service-icon purple">▧</span><strong>Online Applications</strong><small>Help with forms, registrations, applications and submissions.</small></button>
+        <button class="service-card" data-service="Printing & Scanning"><span class="service-icon teal">▣</span><strong>Printing &amp; Scanning</strong><small>Document printing, scanning and photocopy support.</small></button>
+        <button class="service-card" data-service="Ration Card Services"><span class="service-icon red">▤</span><strong>Ration Card Services</strong><small>Guidance for eligible ration card services.</small></button>
+        <button class="service-card" data-service="Certificates"><span class="service-icon indigo">✧</span><strong>Certificates</strong><small>Help with available certificate applications.</small></button>
+        <button class="service-card" data-service="Voter Services"><span class="service-icon slate">✓</span><strong>Voter Services</strong><small>Voter-related online assistance and forms.</small></button>
+      </section>
+      <section class="contact-panel"><div><span class="contact-kicker">NEED HELP?</span><h2>We're here to help.</h2><p>GRAMA ONE AND CSC CENTRE · Near Gram Panchayat, Palbhavi, Karnataka – 591235</p></div><div class="contact-actions"><a class="contact-btn" href="tel:+917338236209">☎ Call CSC GONE</a><a class="contact-btn whatsapp" href="https://wa.me/917338236209" target="_blank" rel="noopener">WhatsApp us ↗</a></div></section>
+      <footer class="dashboard-footer">© 2026 CSC GONE. All rights reserved.</footer>
+    </div>
+  </main>
+</div><div class="toast" id="toast" role="status"></div>
+</body></html>
