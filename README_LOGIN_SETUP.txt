@@ -1,23 +1,32 @@
-CSC GONE — Gmail + Password Registration/Login
-================================================
+CSC GONE — Registration and Login starter
+=========================================
+This ZIP contains a registration/login starting page, dashboard, and your existing business website.
 
-This package contains the CSC GONE registration/login page, a protected dashboard, and the business website.
+Included:
+- index.html — registration and login options
+- dashboard.html — signed-in dashboard and logout
+- home.html — existing CSC GONE website with phone and office location
+- auth.css, auth.js — responsive design and authentication integration
+- config.js — add your Supabase Project URL and anon/public key
+- images/ — existing site images
 
-Registration asks for: full name, mobile number, Gmail address, and password.
-Login uses: Gmail address + password. The mobile number is saved in Supabase user metadata.
+IMPORTANT: Authentication will NOT work until you configure Supabase. This ZIP alone does not create accounts.
 
-IMPORTANT: You must configure config.js before publishing.
+SETUP
+1. Create a project at https://supabase.com/ (free tier; quotas and limits apply).
+2. In project settings/API, copy the Project URL and anon/public key.
+3. Edit config.js and replace the two PASTE_... placeholders with those values.
+   Never use the service_role/secret key in browser code.
+4. In Supabase Authentication settings, enable Phone authentication and disable phone confirmation if available.
+5. Upload/replace all files and the images folder in the root of your hosting repository.
+6. Open the published site using HTTPS and test registration, logout, and login.
 
-1. Open config.js with Notepad.
-2. Replace PASTE_YOUR_SUPABASE_PROJECT_URL_HERE with your Supabase Project URL.
-3. Replace PASTE_YOUR_SUPABASE_ANON_KEY_HERE with your Supabase anon/public key. Do NOT use service_role or a secret key.
-4. Save config.js.
-5. In Supabase Dashboard > Authentication > Sign In / Providers, make sure Email is enabled.
-6. You said you turned Confirm email OFF and saved; this allows signup without email confirmation (subject to project settings).
-7. Upload ALL extracted files and the images folder to the ROOT of your GitHub repository cscgone2026.github.io. Do not upload only the ZIP. Replace files if asked. Commit changes.
-8. Wait for GitHub Pages deployment, then open https://cscgone2026.github.io/ and hard-refresh with Ctrl+Shift+R.
-9. Test with a Gmail address you control and a unique password (8+ characters).
+REGISTRATION
+Name, mobile number, Gmail ID, password. Gmail is saved as unverified user metadata because you requested no verification. Phone is the login identifier; Indian 10-digit numbers are prefixed with +91. Use a unique password with at least 8 characters.
 
-If account signup returns no session, try logging in with the same Gmail and password. Check Supabase Authentication > Users to see whether the user was created.
-
-Security: never share your password. The anon/public key is intended for browser use; never publish a service_role/secret key. Use Supabase Auth and database policies for protected data. Free service quotas and hosting policies/limits apply; lifetime unlimited free service is not guaranteed.
+LIMITS AND SAFETY
+- Free services have quotas/rate limits; unlimited free use forever is not guaranteed.
+- Password handling is managed by Supabase Auth, not stored in this website's own files.
+- This is a starter. Add a privacy notice and test carefully before collecting real customer data.
+- Review GitHub Pages' current rules before using it as a primary business host.
+- If signup doesn't immediately log in, confirm phone confirmation is disabled and the Phone provider is enabled in Supabase.
